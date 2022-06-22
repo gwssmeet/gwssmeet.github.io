@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GWSS Meet - Meet New Grade 12's At GWSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="icon.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .logo {
+    width: 8%;
+  }
+}
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(arrow.png) 96% / 15% no-repeat #EEE;
+}
+
+
+
+</style>
+
+</head>
+
+<center><body>
+
+<img class="logo" src="logo.jpg" alt="GWSS Meet">
+<h1 style="font-family: Arial; font-size: 32px">GWSS Meet [Grade 12]</h1>
+<p style="font-family: Arial; font-size: 38px" id="thename"></p>
+<button style="background: gold; padding: 20px" onclick="changeit()" disabled>New Person</button>
+<select id="dynamic_select">
+  <option value="" selected>Grade 12</option>
+  <option value="/grade9">Grade 9</option>
+  <option value="/grade10">Grade 10</option>
+  <option value="/grade11">Grade 11</option>
+  <option value="/">All Grades</option>
+</select>
+<p style="font-family: Arial; font-size: 12px">Selecting a grade level will only show people in your grade.</p><br>
+<p style="font-family: Arial; font-size: 14px">Email <a href="mailto:gwssmeet@gmail.com" style="color: #a89132">gwssmeet@gmail.com</a> people in this grade so we can add them and make this grade available.</p>
+<p style="font-family: Arial; font-size: 18px">&copy 2022 Anonymous GWSS student.</p>
+<a href="/about" style="font-family: Arial; font-size: 18px; color: #a89132">What is GWSS Meet?</a>
+<p style="font-family: Arial; font-size: 14px">Grade levels will update on September 3, 2022.</p>
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
+<script>
+function random_item(people)
+{
+  
+return people[Math.floor(Math.random()*people.length)];
+     
+}
+
+var people = ["Grade not supported yet."];
+personname = document.getElementById("thename");
+personname.innerHTML = random_item(people);
+function changeit() {
+  personname.innerHTML = random_item(people);
+}
+</script>
+
+</body></center>
+
+</html>

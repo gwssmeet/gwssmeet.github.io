@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GWSS Meet - Meet New People At GWSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="icon.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .logo {
+    width: 8%;
+  }
+}
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(arrow.png) 96% / 15% no-repeat #EEE;
+}
+
+
+
+</style>
+
+</head>
+
+<center><body>
+
+<img class="logo" src="logo.jpg" alt="GWSS Meet">
+<h1 style="font-family: Arial; font-size: 32px">GWSS Meet [All Grades]</h1>
+<p style="font-family: Arial; font-size: 38px" id="thename"></p>
+<button style="background: gold; padding: 20px" onclick="changeit()">New Person</button>
+<select id="dynamic_select">
+  <option value="" selected>All Grades</option>
+  <option value="/grade9">Grade 9</option>
+  <option value="/grade10">Grade 10</option>
+  <option value="/grade11">Grade 11</option>
+  <option value="/grade12">Grade 12</option>
+</select>
+<p style="font-family: Arial; font-size: 12px">Selecting a grade level will only show people in your grade.</p><br>
+<p style="font-family: Arial; font-size: 14px">Suggestions & corrections: <a href="mailto:gwssmeet@gmail.com" style="color: #a89132">gwssmeet@gmail.com</a></p>
+<p style="font-family: Arial; font-size: 18px">&copy 2022 Anonymous GWSS student.</p>
+<a href="/about" style="font-family: Arial; font-size: 18px; color: #a89132">What is GWSS Meet?</a>
+<p style="font-family: Arial; font-size: 14px">Grade levels will update on September 3, 2022.</p>
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
+<script>
+function random_item(people)
+{
+  
+return people[Math.floor(Math.random()*people.length)];
+     
+}
+
+var people = ["Savir Singh, Grade 9", "Jason Zhong, Grade 9", "Leo Sun, Grade 9", "Julia Williams, Grade 9", "Patrick Si, Grade 9", "Alexander Szura, Grade 9", "Sebastian Quintero, Grade 9", "Stefanie Zmiyiwsky, Grade 9", "Leah Stepanek, Grade 9", "Leia Patel, Grade 9", "Luke Patel, Grade 9", "David Monteith, Grade 9", "Arthur Zhiwei Fu, Grade 9", "Marcus Rotaru, Grade 9", "Carter Lemieux, Grade 9", "Matthew Karunakaran, Grade 9", "Farah Abdul, Grade 9", "Zain Agha, Grade 9", "Sarah Bennett, Grade 9", "Prabhav Bhadrachalam, Grade 9", "Keith Bizjak-Lawrence, Grade 9", "Benjamin Bradley, Grade 9", "Karin Braverman, Grade 9", "Gabriel Cordova Soto, Grade 9", "Ashok Cudjoe, Grade 9", "Sarthak Dua, Grade 9", "Kerri Everett, Grade 9", "Carlie Gerber, Grade 9", "Kevin Ghai, Grade 9", "Simran Gill, Grade 9", "Zachary Hersi, Grade 9", "Lizzie Hrubes, Grade 9", "Abraham Jabbar, Grade 9", "Joo-Eun Lee, Grade 9", "Victoria Liang, Grade 9", "Lochlan Nielsen, Grade 9", "Mila Pavasovic, Grade 9", "Haadi Qureshi, Grade 9", "Krisha Raina, Grade 9", "Ari Sarkar, Grade 9", "Maryam Siddique, Grade 9", "Aubrey-Ann Watkins, Grade 9", "Evelyn Zhu, Grade 9", "Ryan Achy, Grade 9", "Madilynn Backo-Shannon, Grade 9", "Travis Campbell, Grade 9", "Rahma Choudhry, Grade 9", "Gino Chourbagi, Grade 9", "Charlie Cruz, Grade 9", "Ava Goldsworthy, Grade 9", "Naz Ihsan, Grade 9", "Cactus Lau, Grade 9", "Blythe Leibold, Grade 9", "Arav Mathur, Grade 9", "Lia Harper, Grade 9", "Kaiden Moulder, Grade 9", "Courtney Oliver, Grade 9", "Menha Omer, Grade 9", "Delaney O'Neil, Grade 9", "Sumail Rahman, Grade 9", "Tyme Salti, Grade 9", "Benjamin Semper, Grade 9", "Brayden Shier, Grade 9", "Sheridan Turnbull, Grade 9", "Kirill Valoshyn, Grade 9", "Raghav Khanna, Grade 9", "Neerav Jadaun, Grade 9", "Lucy Yang, Grade 9", "Kshitij Dewan, Grade 9"];
+personname = document.getElementById("thename");
+personname.innerHTML = random_item(people);
+function changeit() {
+  personname.innerHTML = random_item(people);
+}
+</script>
+
+</body></center>
+
+</html>
